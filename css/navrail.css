@@ -1,0 +1,100 @@
+@import url('./color.css');
+
+/* Navigation Rail */
+.scroll-nav-rail {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  bottom: 20px;
+  height: auto;
+  width: 12px;
+  background: var(--controlBackgroundColor);
+  border-radius: 9999px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px var(--shadowColor);
+}
+
+/* Navigation Nodes */
+.nav-node {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--controlColor);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Invisible larger hit area */
+.nav-node::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%; 
+}
+
+/* Node hover effect */
+.nav-node:hover {
+  background: var(--selectedControlColor);
+  transform: scale(2.5); 
+}
+
+/* Icon inside node */
+.nav-node .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  color: var(--labelColor);
+}
+
+/* Show icon on hover */
+.nav-node:hover .icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* Grow to full size */
+}
+
+/* Tooltip */
+.nav-node .tooltip {
+  position: absolute;
+  top: 50%;
+  right: 180%;
+  transform: translateY(-50%);
+  background: var(--labelColor);
+  color: var(--controlBackgroundColor);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Show tooltip on hover */
+.nav-node:hover .tooltip {
+  opacity: 1;
+}
+
+/* Active node styling */
+.nav-node.active {
+  background: var(--selectedControlColor);
+  transform: scale(2.5);
+}
+
+/* Show icon on active */
+.nav-node.active .icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}

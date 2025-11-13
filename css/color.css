@@ -1,0 +1,109 @@
+/*
+Desktop Light Mode Colors (As of macOS 11.2.3)
+Color codes: M. Griselli, “Apple Colors,” Marcos Griselli, 2021. https://mar.codes/apple-colors.
+‌Color descriptions: “Color,” Apple Developer Documentation, 2025. https://developer.apple.com/design/human-interface-guidelines/color.
+*/
+:root {
+    --systemRed: #ff383c;                                   /* A red color used for UI elements. */
+    --systemOrange: #ff8d28;                                /* An orange color used for UI elements. */
+    --systemYellow: #ffcc00;                                /* A yellow color used for UI elements. */
+    --systemGreen: #34c759;                                 /* A green color used for UI elements. */
+    --systemMint: #00c8b3;                                  /* A mint color used for UI elements. */
+    --systemTeal: #00c3d0;                                  /* A teal color used for UI elements. */
+    --systemCyan: #00c0e8;                                  /* A cyan color used for UI elements. */
+    --systemBlue: #0088ff;                                  /* A blue color used for UI elements. */
+    --systemIndigo: #6155f5;                                /* An indigo color used for UI elements. */
+    --systemPurple: #cb30e0;                                /* A purple color used for UI elements. */
+    --systemPink: #ff2d55;                                  /* A pink color used for UI elements. */
+    --systemBrown: #ac7f5e;                                 /* A brown color used for UI elements. */
+    --systemGray: #8e8e93;                                  /* A gray color used for UI elements. */
+    --scrubberTexturedBackground: #FFFFFF;                  /* The background of a scrubber control. */
+    --textBackgroundColor: #FFFFFF;                         /* The background color behind text. */
+    --controlTextColor: #000000;                            /* The text of a control that is available. */
+    --quaternaryLabelColor: #000000;                        /* The text of a label of lesser importance than a tertiary label, such as watermark text. */
+    --findHighlightColor: #FFFF00;                          /* The color of a find indicator. */
+    --highlightColor: #FFFFFF;                              /* The virtual light source onscreen. */
+    --shadowColor: #000000;                                 /* The virtual shadow cast by a raised object onscreen. */
+    --windowFrameTextColor: #000000;                        /* The text in the window’s title bar area. */
+    --windowBackgroundColor: #ECECEC;                       /* The background of a window. */
+    --keyboardFocusIndicatorColor: #0067F4;                 /* The ring that appears around the currently focused control when using the keyboard for interface navigation. */
+    --separatorColor: #000000;                              /* A separator between different sections of content. */
+    --selectedControlColor: #B3D7FF;                        /* The surface of a selected control. */
+    --controlBackgroundColor: #FFFFFF;                      /* The background of a large interface element, such as a browser or table. */
+    --secondaryLabelColor: #000000;                         /* The text of a label of lesser importance than a primary label, such as a label used to represent a subheading or additional information. */
+    --tertiaryLabelColor: #000000;                          /* The text of a label of lesser importance than a secondary label. */
+    --gridColor: #E6E6E6;                                   /* The gridlines of an interface element, such as a table. */
+    --alternateSelectedControlTextColor: #FFFFFF;           /* The text on a selected surface in a list or table. */
+    --unemphasizedSelectedContentBackgroundColor: #DCDCDC;  /* The selected content in a non-key window or view. */
+    --textColor: #000000;                                   /* The text in a document. */
+    --selectedContentBackgroundColor: #0063E1;              /* The background for selected content in a key window or view. */
+    --selectedTextColor: #000000;                           /* The color for selected text. */
+    --labelColor: #000000;                                  /* The text of a label containing primary content. */
+    --placeholderTextColor: #000000;                        /* A placeholder string in a control or text view. */
+    --unemphasizedSelectedTextBackgroundColor: #DCDCDC;     /* A background for selected text in a non-key window or view. */
+    --disabledControlTextColor: #000000;                    /* The text of a control that’s unavailable. */
+    --headerTextColor: #000000;                             /* The text of a header cell in a table. */
+    --linkColor: #0068DA;                                   /* A link to other content. */
+    --selectedTextBackgroundColor: #B3D7FF;                 /* The background of selected text. */
+    --unemphasizedSelectedTextColor: #000000;               /* Selected text in a non-key window or view.Selected text in a non-key window or view. */
+    --controlColor: #FFFFFF;                                /* The surface of a control. */
+    --selectedControlTextColor: #000000;                    /* The text of a selected control. */
+    --underPageBackgroundColor: #969696;                    /* The background behind a document’s content. */
+    --selectedMenuItemTextColor: #FFFFFF;                   /* The text of a selected menu. */
+}
+
+/*
+Desktop Dark Mode Colors (As of macOS 11.2.3)
+Color codes: M. Griselli, “Apple Colors,” Marcos Griselli, 2021. https://mar.codes/apple-colors.
+‌Color descriptions: “Color,” Apple Developer Documentation, 2025. https://developer.apple.com/design/human-interface-guidelines/color.
+*/
+@media (prefers-color-scheme: dark) {
+    :root {
+        --systemRed: #ff4245;
+        --systemOrange: #ff9230;
+        --systemYellow: #ffd600;
+        --systemGreen: #30d158;
+        --systemMint: #00dac3;
+        --systemTeal: #00d2f4;
+        --systemCyan: #3cd3fe;
+        --systemBlue: #0091ff;
+        --systemIndigo: #6d7cff;
+        --systemPurple: #db34f2;
+        --systemPink: #ff375f;
+        --systemBrown: #b78a66;
+        --systemGray: #8e8e93;
+        --scrubberTexturedBackground: #FFFFFF;
+        --textBackgroundColor: #1E1E1E;
+        --controlTextColor: #FFFFFF;
+        --quaternaryLabelColor: #FFFFFF;
+        --findHighlightColor: #FFFF00;
+        --highlightColor: #B4B4B4;
+        --shadowColor: #000000;
+        --windowFrameTextColor: #FFFFFF;
+        --windowBackgroundColor: #323232;
+        --keyboardFocusIndicatorColor: #1AA9FF;
+        --separatorColor: #FFFFFF;
+        --selectedControlColor: #3F638B;
+        --controlBackgroundColor: #1E1E1E;
+        --secondaryLabelColor: #FFFFFF;
+        --tertiaryLabelColor: #FFFFFF;
+        --gridColor: #1A1A1A;
+        --alternateSelectedControlTextColor: #FFFFFF;
+        --unemphasizedSelectedContentBackgroundColor: #464646;
+        --textColor: #FFFFFF;
+        --selectedContentBackgroundColor: #0058D0;
+        --selectedTextColor: #FFFFFF;
+        --labelColor: #FFFFFF;
+        --placeholderTextColor: #FFFFFF;
+        --unemphasizedSelectedTextBackgroundColor: #464646;
+        --disabledControlTextColor: #FFFFFF;
+        --headerTextColor: #FFFFFF;
+        --linkColor: #419CFF;
+        --selectedTextBackgroundColor: #3F638B;
+        --unemphasizedSelectedTextColor: #FFFFFF;
+        --controlColor: #FFFFFF;
+        --selectedControlTextColor: #FFFFFF;
+        --underPageBackgroundColor: #282828;
+        --selectedMenuItemTextColor: #FFFFFF;
+    }
+}

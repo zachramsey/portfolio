@@ -1,0 +1,38 @@
+:root {
+    --sidebar-width: 0px; 
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--underPageBackgroundColor);
+    color: var(--textColor);
+}
+
+h2 {
+    margin: 0;
+    padding-top: 32px;
+}
+
+.project-content {
+    padding: 0px 80px 40px 100px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.project-section {
+  height: 100vh;
+  border-bottom: 1px solid var(--separatorColor);
+  background-color: var(--underPageBackgroundColor);
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --sidebar-width: 320px;
+    }
+
+    .project-content {
+        padding-left: 30px;
+        margin-left: var(--sidebar-width);
+        transition: margin-left 0.3s ease-in-out;
+    }
+}

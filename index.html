@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Portfolio | Zach Ramsey</title>
+        <link rel="stylesheet" href="css/projects.css">
+        <link rel="stylesheet" href="css/sidebar.css">
+        <link rel="stylesheet" href="css/navrail.css">
+    </head>
+    <body>
+        <button id="menu-toggle-button" class="menu-toggle-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <aside id="portfolio-sidebar" class="portfolio-sidebar">
+            <div class="sidebar-content">
+                <img src="https://placehold.co/150x150/007aff/white?text=Me" alt="My Profile Picture" class="profile-pic">
+                <h1 class="profile-name">Zach Ramsey</h1>
+                <p class="profile-bio">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:zramsey11@gmail.com">zramsey11@gmail.com</a>
+                    <a href="https://linkedin.com/in/zramsey" target="_blank" rel="noopener noreferrer external">LinkedIn</a>
+                    <a href="https://github.com/zachramsey" target="_blank" rel="noopener noreferrer external">GitHub</a>
+                </div>
+            </div>
+        </aside>
+
+        <main id="main-content" class="project-content">
+            <section id="project-1" class="project-section">
+                <h2>Project One</h2>
+                <p>This is a description of Project One.</p>
+            </section>
+            <section id="project-2" class="project-section">
+                <h2>Project Two</h2>
+                <p>This is a description of Project Two.</p>
+            </section>
+            <section id="project-3" class="project-section">
+                <h2>Project Three</h2>
+                <p>This is a description of Project Three.</p>
+            </section>
+        </main>
+
+        <nav class="scroll-nav-rail">
+            <a href="#project-1" class="nav-node">
+                <span class="icon">🚀</span>
+                <span class="tooltip">Project One</span>
+            </a>
+            <a href="#project-2" class="nav-node">
+                <span class="icon">🎨</span>
+                <span class="tooltip">Project Two</span>
+            </a>
+            <a href="#project-3" class="nav-node">
+                <span class="icon">💻</span>
+                <span class="tooltip">Project Three</span>
+            </a>
+        </nav>
+
+        <script src="js/sidebar.js"></script>
+        <script src="js/navrail.js"></script>
+    </body>
+</html>

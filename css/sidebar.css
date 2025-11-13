@@ -1,0 +1,159 @@
+@import url('./color.css');
+
+:root {
+    --sidebar-width: 0px; 
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.sidebar-is-open {
+    overflow: hidden;
+}
+
+
+/* Mobile Sidebar Styles */
+.portfolio-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--controlBackgroundColor);
+    z-index: 1000;
+    
+    /* Hidden by default */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    
+    /* Content styling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.portfolio-sidebar.is-open {
+    transform: translateX(0);
+}
+
+.sidebar-content {
+    position: relative;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--separatorColor);
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.profile-bio {
+    font-size: 1rem;
+    color: var(--secondaryLabelColor);
+    max-width: 280px;
+    margin: 10px auto;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.contact-links a {
+    color: var(--linkColor);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+.contact-links a:hover {
+    opacity: 0.7;
+}
+
+
+/* Menu Toggle Button */
+.menu-toggle-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    
+    /* Hamburger bars */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-toggle-button span {
+    width: 24px;
+    height: 2px;
+    background: var(--textColor);
+    display: block;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+body.sidebar-is-open .menu-toggle-button span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+body.sidebar-is-open .menu-toggle-button span:nth-child(2) {
+    opacity: 0;
+}
+body.sidebar-is-open .menu-toggle-button span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* Desktop Sidebar Styles */
+@media (min-width: 1024px) {
+    :root {
+        --sidebar-width: 320px;
+    }
+
+    .portfolio-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: var(--sidebar-width);
+        height: 100vh;
+        transform: translateX(0);
+        transition: none;
+        box-shadow: 0 0 15px var(--shadowColor);
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* Remove auto margin */
+    .profile-bio {
+        margin: 10px 0;
+    }
+
+    /* Hide mobile buttons */
+    .menu-toggle-button {
+        display: none;
+    }
+    
+    /* Re-enable body scrolling */
+    body.sidebar-is-open {
+        overflow: auto;
+    }
+}
