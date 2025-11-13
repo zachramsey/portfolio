@@ -19,8 +19,9 @@ function positionNavNodes() {
         if (targetElement) {
             // Get the section's starting position
             const sectionTop = targetElement.offsetTop;
+            const sectionHeight = targetElement.offsetHeight;
             // Calculate percentage down the page
-            let percentDown = (sectionTop / totalPageHeight);
+            let percentDown = (sectionTop + (sectionHeight / 2)) / totalPageHeight;
             // Clamp percentDown between 0 and 1
             percentDown = Math.max(0, Math.min(percentDown, 1)); 
             // Calculate final pixel position
