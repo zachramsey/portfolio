@@ -31,9 +31,9 @@
 .nav-node::after {
   content: '';
   position: absolute;
-  transform: translate(-7px, -7px);
-  width: 24px;
-  height: 24px;
+  transform: translate(-11px, -11px);
+  width: 32px;
+  height: 32px;
   background: transparent;
   border-radius: 50%; 
 }
@@ -47,8 +47,8 @@
 /* Icon inside node */
 .nav-node .nav-icon {
   position: absolute;
-  top: -30%;
-  left: -30%;
+  top: -37%;
+  left: -37%;
   transform: (0.5);
   opacity: 0;
   transition: all 0.3s ease;
@@ -57,14 +57,14 @@
 }
 
 .nav-node img.nav-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 /* Show icon on hover */
 .nav-node:hover .nav-icon {
   opacity: 1;
-  transform: translateX(-1.5%) scale(1);
+  transform: scale(1);
 }
 
 /* Active node styling */
@@ -81,14 +81,14 @@
 
 /* Kiwi-drive icon rotation */
 .nav-node #kiwi-icon {
-  transform: rotate(0deg);
+  transform: rotate(30deg);
   transition: transform 0.5s ease-in-out;
 }
 .nav-node:hover #kiwi-icon {
-  transform: rotate(180deg);
+  transform: rotate(210deg);
 }
 .nav-node.active #kiwi-icon {
-  transform: rotate(180deg);
+  transform: rotate(210deg);
 }
 
 /* Tooltip */
