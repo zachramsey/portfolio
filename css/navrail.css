@@ -9,17 +9,16 @@
   height: auto;
   width: 12px;
   background: var(--controlBackgroundColor);
+  border: 1px solid var(--controlBackgroundColor);
   border-radius: 9999px;
   padding: 20px 0;
   box-sizing: border-box;
-  box-shadow: 0 4px 10px var(--shadowColor);
+  /* box-shadow: 0 4px 10px var(--shadowColor); */
 }
 
 /* Navigation Nodes */
 .nav-node {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   width: 10px;
   height: 10px;
   background: var(--controlColor);
@@ -32,37 +31,64 @@
 .nav-node::after {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
+  transform: translate(-7px, -7px);
+  width: 24px;
+  height: 24px;
   background: transparent;
   border-radius: 50%; 
 }
 
 /* Node hover effect */
 .nav-node:hover {
-  background: var(--selectedControlColor);
-  transform: scale(2.5); 
+  background: transparent;
+  transform: scale(2.5);
 }
 
 /* Icon inside node */
-.nav-node .icon {
+.nav-node .nav-icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
+  top: -30%;
+  left: -30%;
+  transform: (0.5);
   opacity: 0;
   transition: all 0.3s ease;
   font-size: 14px;
   color: var(--labelColor);
 }
 
+.nav-node img.nav-icon {
+  width: 16px;
+  height: 16px;
+}
+
 /* Show icon on hover */
-.nav-node:hover .icon {
+.nav-node:hover .nav-icon {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1); /* Grow to full size */
+  transform: translateX(-1.5%) scale(1);
+}
+
+/* Active node styling */
+.nav-node.active {
+  background: transparent;
+  transform: scale(2.5);
+}
+
+/* Show icon on active */
+.nav-node.active .nav-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Kiwi-drive icon rotation */
+.nav-node #kiwi-icon {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+.nav-node:hover #kiwi-icon {
+  transform: rotate(180deg);
+}
+.nav-node.active #kiwi-icon {
+  transform: rotate(180deg);
 }
 
 /* Tooltip */
@@ -81,20 +107,6 @@
   pointer-events: none;
   transition: all 0.3s ease;
 }
-
-/* Show tooltip on hover */
 .nav-node:hover .tooltip {
   opacity: 1;
-}
-
-/* Active node styling */
-.nav-node.active {
-  background: var(--selectedControlColor);
-  transform: scale(2.5);
-}
-
-/* Show icon on active */
-.nav-node.active .icon {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
 }

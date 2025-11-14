@@ -33,12 +33,43 @@ function positionNavNodes() {
 }
 
 
+/* Update active nav node based on scroll position */
+function selectNavNode() {
+    const navNodes = document.querySelectorAll('.scroll-nav-rail .nav-node');
+    const projectSections = document.querySelectorAll('.project-section');
+    let currentSectionId = '';
+    // Determine which section is currently in view
+    projectSections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        // Check if section is at least halfway on screen
+        if (window.scrollY >= sectionTop - sectionHeight / 2) {
+            currentSectionId = section.getAttribute('id');
+        }
+    });
+    // update "active" class on nav nodes
+    navNodes.forEach(node => {
+        // Remove "active" class from all nodes
+        node.classList.remove('active');
+        // Add "active" class to matching node
+        if (node.getAttribute('href') === `#${currentSectionId}`) {
+            node.classList.add('active');
+        }
+    });
+}
+
+
 /* Smooth scrolling for navigation rail */
 document.addEventListener('DOMContentLoaded', () => {
     // Position nav nodes on load
     positionNavNodes();
     // Reposition nav nodes on window resize
     window.addEventListener('resize', positionNavNodes);
+
+    // Select active nav node on load
+    selectNavNode();
+    // Update active nav node on scroll
+    window.addEventListener('scroll', selectNavNode);
 
     // Add click event listeners to nav nodes
     const navNodes = document.querySelectorAll('.scroll-nav-rail .nav-node');
@@ -55,30 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 behavior: 'smooth',
                 block: 'start'
                 });
-            }
-        });
-    });
-
-    /* Update active nav node based on scroll position */
-    const projectSections = document.querySelectorAll('.project-section');
-    window.addEventListener('scroll', () => {
-        let currentSectionId = '';
-        // Determine which section is currently in view
-        projectSections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            // Check if section is at least halfway on screen
-            if (window.scrollY >= sectionTop - sectionHeight / 2) {
-                currentSectionId = section.getAttribute('id');
-            }
-        });
-        // update "active" class on nav nodes
-        navNodes.forEach(node => {
-            // Remove "active" class from all nodes
-            node.classList.remove('active');
-            // Add "active" class to matching node
-            if (node.getAttribute('href') === `#${currentSectionId}`) {
-                node.classList.add('active');
             }
         });
     });
